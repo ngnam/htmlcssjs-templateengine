@@ -30,8 +30,8 @@ export const Testimonials = () => {
     return (
         <div className="flex flex-col md:flex-row justify-center items-center gap-10">
             {
-                TESTIMONIAL_DATA.map((item) => {
-                    return <TestimonialCard customerName={item.customerName} imageURL={item.imageURL} imageAlt={item.imageAlt} testimonialText={item.testimonialText} />
+                TESTIMONIAL_DATA.map((item, index) => {
+                    return <TestimonialCard key={index} customerName={item.customerName} imageURL={item.imageURL} imageAlt={item.imageAlt} testimonialText={item.testimonialText} />
                 })
             }
         </div>
