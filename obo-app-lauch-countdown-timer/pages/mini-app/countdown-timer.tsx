@@ -7,8 +7,9 @@ import { Header } from '../../components/count-down/Header'
 import { TimerInput } from '../../components/count-down/TimerInput'
 
 const CountDownTimer: NextPage = () => {
+  const [time, setTime] = React.useState<number>(1)
+
   const [newTime, setNewTime] = React.useState<number>(0)
-  const [time, setTime] = React.useState<number>(0)
   const [days, setDays] = React.useState<number>(0);
   const [hours, setHours] = React.useState<number>(0);
   const [minutes, setMinutes] = React.useState<number>(0);
@@ -44,6 +45,8 @@ const CountDownTimer: NextPage = () => {
         setHours(0);
         setMinutes(0);
         setSeconds(0);
+      } else {
+        setMessage("The Launch starting...");
       }
 
     })
