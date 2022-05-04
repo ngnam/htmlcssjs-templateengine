@@ -41,11 +41,21 @@ const Home: NextPage = () => {
             </a>
           </Link>
 
+          <Link href="/mini-app/advice-generator">
+            <a
+              className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
+            >
+              <h3 className="text-2xl font-bold">Advice Generator App &rarr;</h3>
+              <p className="mt-4 text-xl">
+              </p>
+            </a>
+          </Link>
+
           <Link href="#">
             <a
               className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
             >
-              <h3 className="text-2xl font-bold">Examples &rarr;</h3>
+              <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
               <p className="mt-4 text-xl">
               </p>
             </a>

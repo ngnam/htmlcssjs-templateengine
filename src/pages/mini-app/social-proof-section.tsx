@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { HeaderText } from '../../components/social-proof-section/HeaderText'
 import { StarRating } from '../../components/social-proof-section/StarRating'
 import { Testimonials } from '../../components/social-proof-section/Testimonials'
+import { Footer } from '../../components/social-proof-section/Footer'
 
 const SocialProofSection: NextPage = () => {
 
@@ -24,6 +25,7 @@ const SocialProofSection: NextPage = () => {
       </div>
       <Testimonials />
       
+      <Footer />
     </div>
   )
 }
