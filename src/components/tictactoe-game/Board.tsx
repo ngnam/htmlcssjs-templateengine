@@ -17,7 +17,7 @@ interface SquareProp {
 }
 
 export const Board = ({ winner, playerX, handlePlayer, handleRestartGame, squares, size }: PlayerProp) => {
-    const arrRender = Array.from(Array(size).keys());
+    const arrRender = Array.from(Array(Math.pow(size, 2)).keys());
 
     var rows = [], i = 0, len = Math.pow(size, 2);
     while (i < len) {
@@ -25,7 +25,7 @@ export const Board = ({ winner, playerX, handlePlayer, handleRestartGame, square
         i += size;
     }
 
-    console.log(rows)
+    // console.log(rows)
 
     // Square Button and RenderSquare function
     function Square({ value, onClick }: SquareProp) {
