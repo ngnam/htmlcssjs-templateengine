@@ -15,7 +15,7 @@
     }
 
     .board {
-        @apply mt-24 flex h-[350px] w-[350px] md:mt-20 md:h-[400px] md:w-[400px] flex-col items-center justify-center space-y-4 rounded-xl;
+        @apply mt-24 flex min-h-[350px] min-w-[350px] md:mt-20 md:min-h-[400px] md:min-w-[400px] flex-col items-center justify-center space-y-4 rounded-xl;
     }
 
     .board-row {

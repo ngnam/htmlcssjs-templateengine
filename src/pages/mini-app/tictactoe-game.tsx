@@ -6,7 +6,7 @@ import { ChoosePlayer } from '../../components/tictactoe-game/ChoosePlayer'
 import { Board } from '../../components/tictactoe-game/Board'
 import { WinnerModal } from '../../components/tictactoe-game/WinnerModal'
 
-const square = 4;
+const square = 5;
 
 const TicTacToeGame: NextPage = () => {
   const [isX, setIsX] = React.useState<boolean>(true);
@@ -16,11 +16,11 @@ const TicTacToeGame: NextPage = () => {
   let winner = calculateWinner(squares);
 
   // handle Choose player
-  function handlePlayerX() {
+  function handlePlayerX() {    
     setIsX(true);
   }
 
-  function handlePlayerO() {
+  function handlePlayerO() {    
     setIsX(false);
   }
 
@@ -46,7 +46,7 @@ const TicTacToeGame: NextPage = () => {
   // It will handle the start Game when the player choose one of the Icon
   // with which they want to player
   function handleNewGame() {
-    setIsX(true);
+    // setIsX(true);
     setSqaures(Array(Math.pow(square, 2)).fill(null));
     setNewGame(true);
   };
@@ -56,6 +56,20 @@ const TicTacToeGame: NextPage = () => {
     setSqaures(Array(Math.pow(square, 2)).fill(null));
     setNewGame(false);
   }
+
+  function Create2DArray(rows: number, cols: number) {
+    var arr = [];
+
+    for (var i = 0; i < rows; i++) {
+      arr[i] = [];
+      for (let j = 0; j < cols; j++) {
+        // arr[i].push(j);
+      }
+    }
+
+    return arr;
+  }
+
   // Calculate the winner
   function calculateWinner(squares: Array<any>) {
     // Total 8 winning patterens
@@ -80,6 +94,13 @@ const TicTacToeGame: NextPage = () => {
     // 04 05 06 07
     // 08 09 10 11
     // 12 13 14 15
+
+    // 5x5
+    // 00 01 02 03 04
+    // 05 06 07 08 09
+    // 10 11 12 13 14
+    // 15 16 17 18 19
+    // 20 21 22 23 24
 
     for (let i = 0; i < winningPatterns.length; i++) {
       const [a, b, c, d] = winningPatterns[i];

@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import { MiniAppRouter } from '../routers/mini-app.route'
 
 const Home: NextPage = () => {
   return (
@@ -21,55 +22,19 @@ const Home: NextPage = () => {
 
         <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
 
-          <Link href="/mini-app/countdown-timer">
-            <a
-              className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-            >
-              <h3 className="text-2xl font-bold">Lauch Countdown Timer &rarr;</h3>
-              <p className="mt-4 text-xl">
-              </p>
-            </a>
-          </Link>
-
-          <Link href="/mini-app/social-proof-section">
-            <a
-              className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-            >
-              <h3 className="text-2xl font-bold">Social Proof Section &rarr;</h3>
-              <p className="mt-4 text-xl">
-              </p>
-            </a>
-          </Link>
-
-          <Link href="/mini-app/advice-generator">
-            <a
-              className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-            >
-              <h3 className="text-2xl font-bold">Advice Generator App &rarr;</h3>
-              <p className="mt-4 text-xl">
-              </p>
-            </a>
-          </Link>
-
-          <Link href="/mini-app/tictactoe-game">
-            <a
-              className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-            >
-              <h3 className="text-2xl font-bold">TicTacToe Game &rarr;</h3>
-              <p className="mt-4 text-xl">
-              </p>
-            </a>
-          </Link>
-
-          <Link href="#">
-            <a
-              className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-            >
-              <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-              <p className="mt-4 text-xl">
-              </p>
-            </a>
-          </Link>
+          {
+            MiniAppRouter && MiniAppRouter.map(route => (
+              <Link href={route.url} key={route.id}>
+                <a
+                  className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
+                >
+                  <h3 className="text-2xl font-bold">{route.name} &rarr;</h3>
+                  <p className="mt-4 text-xl">
+                  </p>
+                </a>
+              </Link>
+            ))
+          }
 
         </div>
       </main>
