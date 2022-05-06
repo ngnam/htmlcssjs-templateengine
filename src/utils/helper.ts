@@ -107,12 +107,17 @@ function create2DArray(rows: number, cols: number, length: number) {
         arr[index] = arrRender.slice(index, slice_next); // new Array(cols);
         index = slice_next;
         slice_next += rows;
+
+        for (let j = i; j < Math.pow(cols, 2); j = j + cols) {
+            // fe
+            console.log(i)
+        }
     }
 
+    // 0 5 10 15 20
+    // 1 6 11 16 21
     // y
-    for (let j = 0; j < cols; j++) {
-        
-    }
+ 
 
     return arr.filter(Boolean);
   }
