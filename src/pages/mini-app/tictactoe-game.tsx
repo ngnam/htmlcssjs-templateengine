@@ -9,7 +9,7 @@ import { create2DArray } from '../../utils/helper'
 
 const square = 5;
 
-function TicTacToeGame() {
+const TicTacToeGame: NextPage = () => {
   const [isX, setIsX] = React.useState<boolean>(true)
   const [newGame, setNewGame] = React.useState<boolean>(false)
   const [squares, setSqaures] = React.useState<Array<any>>(Array(Math.pow(square, 2)).fill(null))
