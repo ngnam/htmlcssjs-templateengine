@@ -94,7 +94,8 @@ function pasteFromJson(json: any): string {
     return JSON.stringify(json);
 }
 
-function create2DArray(rows: number, cols: number, length: number) {
+function create2DArray(rows: number, cols: number) {
+    let length = Math.pow(rows, 2);
     let arrRender = Array.from(Array(length).keys());
     let arr = new Array(rows);
     let index = 0;
@@ -104,25 +105,26 @@ function create2DArray(rows: number, cols: number, length: number) {
 
     // x
     for (var i = 0; i < rows; i++) {
-        arr[index] = arrRender.slice(index, slice_next); // new Array(cols);
+        arr.push(arrRender.slice(index, slice_next)); // new Array(cols);
         index = slice_next;
         slice_next += rows;
-
-        for (let j = i; j < Math.pow(cols, 2); j = j + cols) {
-            // fe
-            console.log(i)
+        // 0 5 10 15 20
+        // 1 6 11 16 21
+        // 2 7 12 17 22
+        // 3 8 13 18 23
+        // 4 9 14 19 24
+        let arrY = new Array(cols);
+        for (let j = i; j < length; j = j + cols) {
+            arrY.push(j);
         }
-    }
-
-    // 0 5 10 15 20
-    // 1 6 11 16 21
-    // y
- 
+        arrY = arrY.filter(a => a != null);
+        arr.push(arrY);
+    }    
 
     return arr.filter(Boolean);
-  }
+}
 
-export default {
+export {
     copyToClipboard,
     pasteFromClipboard,
     splitAStringWord,
