@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import React from 'react'
 
 interface TesimonialProps {
@@ -14,9 +13,8 @@ export const TestimonialCard = ({ customerName, testimonialText, imageURL, image
             <div className="flex space-x-5 pb-4  md:space-x-6 md:px-4 ">
                 <div className="w-[50px] h-[50px] rounded-full ring-4 ring-fuchsia-400 group-hover:ring-fuchsia-100">
 
-                    <Image
+                    <img
                         src={imageURL}
-                        objectFit="contain"
                         width={50}
                         height={50}
                         className="rounded-full"

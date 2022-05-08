@@ -1,9 +1,12 @@
 {
   "private": true,
+  "homepage": "https://ngnam.github.io/htmlcssjs-templateengine/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "static": "next build && next export && echo.>./out/.nojekyll && echo.'ngnam.github.io' > ./out/CNAME",
+    "deploy": "npm run static && gh-pages -d out -t true"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
