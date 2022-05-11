@@ -1,6 +1,5 @@
 {
   "private": true,
-  "homepage": "https://ngnam.github.io/htmlcssjs-templateengine/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
